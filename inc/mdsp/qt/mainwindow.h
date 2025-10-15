@@ -2,10 +2,13 @@
 #define MDSP_QT_MAINWINDOW_H
 
 #include <QMainWindow>
+#include <cstddef>
 #include <vector>
 #include <complex>
 
 class QCustomPlot;
+class QCPColorScale;
+class QCPMarginGroup;
 
 namespace mdsp {
 namespace qt {
@@ -19,6 +22,8 @@ public:
     ~MainWindow();
     
     QCustomPlot* customPlot;
+    QCPColorScale* colorScale;
+    QCPMarginGroup* colorScaleMargins;
     
     // Vector-based line_plot methods
     void line_plot(const std::vector<std::complex<double>>& data);
@@ -31,6 +36,14 @@ public:
     void line_plot(const std::complex<float>* data, size_t size);
     void line_plot(const double* data, size_t size);
     void line_plot(const float* data, size_t size);
+
+    // Colormap plotting helpers
+    void colormap_plot(const std::vector<std::vector<double>>& data);
+    void colormap_plot(const std::vector<std::vector<float>>& data);
+    void colormap_plot(const std::vector<double>& data, size_t width, size_t height);
+    void colormap_plot(const std::vector<float>& data, size_t width, size_t height);
+    void colormap_plot(const double* data, size_t width, size_t height);
+    void colormap_plot(const float* data, size_t width, size_t height);
 
 private:
 

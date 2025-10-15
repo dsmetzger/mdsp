@@ -104,5 +104,78 @@ void line_plot(const float* data, size_t size) {
     app.exec();
 }
 
+// Colormap-based implementations
+void colormap_plot(const std::vector<std::vector<double>>& data) {
+    int argc = 0;
+    char* argv[] = { nullptr };
+    QApplication app(argc, argv);
+
+    MainWindow* window = new MainWindow();
+    window->colormap_plot(data);
+    window->show();
+
+    app.exec();
+}
+
+void colormap_plot(const std::vector<std::vector<float>>& data) {
+    int argc = 0;
+    char* argv[] = { nullptr };
+    QApplication app(argc, argv);
+
+    MainWindow* window = new MainWindow();
+    window->colormap_plot(data);
+    window->show();
+
+    app.exec();
+}
+
+void colormap_plot(const std::vector<double>& data, size_t width, size_t height) {
+    int argc = 0;
+    char* argv[] = { nullptr };
+    QApplication app(argc, argv);
+
+    MainWindow* window = new MainWindow();
+    window->colormap_plot(data, width, height);
+    window->show();
+
+    app.exec();
+}
+
+void colormap_plot(const std::vector<float>& data, size_t width, size_t height) {
+    int argc = 0;
+    char* argv[] = { nullptr };
+    QApplication app(argc, argv);
+
+    MainWindow* window = new MainWindow();
+    window->colormap_plot(data, width, height);
+    window->show();
+
+    app.exec();
+}
+
+void colormap_plot(const double* data, size_t width, size_t height) {
+    int argc = 0;
+    char* argv[] = { nullptr };
+    QApplication app(argc, argv);
+
+    MainWindow* window = new MainWindow();
+    window->colormap_plot(data, width, height);
+    window->show();
+
+    app.exec();
+}
+
+void colormap_plot(const float* data, size_t width, size_t height) {
+    int argc = 0;
+    char* argv[] = { nullptr };
+    QApplication app(argc, argv);
+
+    MainWindow* window = new MainWindow();
+    window->colormap_plot(data, width, height);
+    window->show();
+
+    app.exec();
+}
+
 } // namespace qt
 } // namespace mdsp
